@@ -16,10 +16,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Arcana.DataAccess\Arcana.DataAccess.csproj" />
+    <ProjectReference Include="..\Arcana.Service\Arcana.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>
