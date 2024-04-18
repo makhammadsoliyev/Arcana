@@ -2,6 +2,7 @@ using Arcana.DataAccess.Context;
 using Arcana.DataAccess.UnitOfWorks;
 using Arcana.Service.Helpers;
 using Arcana.Service.Services.Assets;
+using Arcana.Service.Services.Permissions;
 using Arcana.Service.Services.Roles;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,6 +18,7 @@ builder.Services.AddDbContext<ArcanaDbContext>(option
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAssetService, AssetService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<IPermissionService, PermissionService>();
 
 EnvironmentHelper.WebRootPath = Path.GetFullPath("wwwroot");
 
