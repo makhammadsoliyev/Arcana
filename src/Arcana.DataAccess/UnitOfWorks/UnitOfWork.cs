@@ -17,7 +17,7 @@ public class UnitOfWork : IUnitOfWork
 
     public IRepository<Student> Students { get; }
 
-    public IRepository<UserRole> UserRoles { get; }
+    public IRepository<Role> Roles { get; }
 
     public IRepository<Instructor> Instructors { get; }
 
@@ -31,7 +31,7 @@ public class UnitOfWork : IUnitOfWork
         Users = new Repository<User>(_context);
         Assets = new Repository<Asset>(_context);
         Students = new Repository<Student>(_context);
-        UserRoles = new Repository<UserRole>(_context);
+        UserRoles = new Repository<Role>(_context);
         Instructors = new Repository<Instructor>(_context);
         Permissions = new Repository<Permission>(_context);
         UserPermissions = new Repository<UserPermission>(_context);

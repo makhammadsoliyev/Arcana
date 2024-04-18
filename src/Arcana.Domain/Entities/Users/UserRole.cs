@@ -2,7 +2,7 @@
 
 namespace Arcana.Domain.Entities.Users;
 
-public class UserRole : Auditable
+public class Role : Auditable
 {
     public string Name { get; set; }
 }
