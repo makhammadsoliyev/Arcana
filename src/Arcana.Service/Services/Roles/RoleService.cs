@@ -62,6 +62,7 @@ public class RoleService(IUnitOfWork unitOfWork) : IRoleService
             throw new AlreadyExistException($"Role with this name: {role.Name} already exists");
 
         role.Id = id;
+        role.UpdatedByUserId = HttpContextHelper.UserId;
         var updatedRole = await unitOfWork.Roles.UpdateAsync(role);
         await unitOfWork.SaveAsync();
 
