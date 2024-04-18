@@ -30,10 +30,10 @@ public class AssetService(IUnitOfWork unitOfWork) : IAssetService
 
     public async Task<Asset> UploadAsync(IFormFile file, FileType type)
     {
-        var directoryPath = Path.Combine(EnvironmentHelper.WebRootPath, nameof(type));
+        var directoryPath = Path.Combine(EnvironmentHelper.WebRootPath, type.ToString());
         Directory.CreateDirectory(directoryPath);
 
-        var fullPath = Path.Combine(directoryPath, file.Name);
+        var fullPath = Path.Combine(directoryPath, file.FileName);
 
         using var stream = new FileStream(fullPath, FileMode.Create);
         await file.CopyToAsync(stream);
