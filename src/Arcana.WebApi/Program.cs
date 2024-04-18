@@ -2,11 +2,12 @@ using Arcana.DataAccess.Context;
 using Arcana.DataAccess.UnitOfWorks;
 using Arcana.Service.Helpers;
 using Arcana.Service.Services.Assets;
+using Arcana.Service.Services.Roles;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -15,6 +16,7 @@ builder.Services.AddDbContext<ArcanaDbContext>(option
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAssetService, AssetService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
 
 EnvironmentHelper.WebRootPath = Path.GetFullPath("wwwroot");
 
